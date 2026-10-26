@@ -3,7 +3,7 @@
 Videojuego Action-Roguelike 2D desarrollado en Godot Engine 4 para el Trabajo Final de Grado (UOC).
 
 ## Requisitos de ejecución
-- Godot Engine versión 4.x (recomendado estable).
+- Godot Engine versión 4.7 (recomendado estable).
 
 ## Cómo abrir el proyecto
 1. Clonar o descargar el repositorio en local.
