@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://cl5ygjxt0ry80"]
 
-[ext_resource type="Texture2D" uid="uid://cal85kxuhlfrl" path="res://Sprites/People.png" id="1_tlcug"]
-
 [node name="Main" type="Node2D" unique_id=1710429754]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=187440381]
 motion_mode = 1
 
 [node name="Sprite" type="Sprite2D" parent="Player" unique_id=1309549633]
-texture = ExtResource("1_tlcug")
