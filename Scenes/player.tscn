@@ -22,6 +22,7 @@ region_rect = Rect2(2, 140, 7, 10)
 shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=1034887550]
+modulate = Color(0.57284313, 3.1140196, 2.6120589, 1)
 
 [node name="WeaponSprite" type="Sprite2D" parent="Weapon" unique_id=440908599]
 modulate = Color(0.7767227, 0.5007226, 0.8893017, 1)
