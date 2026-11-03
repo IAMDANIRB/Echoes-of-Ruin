@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://cl5ygjxt0ry80"]
 
+[ext_resource type="PackedScene" uid="uid://cgnj1q752bwv0" path="res://Scenes/Rooms/room_template.tscn" id="1_3mqfk"]
+[ext_resource type="PackedScene" uid="uid://cmmpofb1qbdka" path="res://Scenes/crt_effect.tscn" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://jpjl8hy6i0al" path="res://Scenes/player.tscn" id="1_tlcug"]
 
 [node name="Main" type="Node2D" unique_id=1710429754]
+position = Vector2(146, 82)
+
+[node name="Room_Template" parent="." unique_id=296701150 instance=ExtResource("1_3mqfk")]
 
 [node name="Player" parent="." unique_id=476513904 instance=ExtResource("1_tlcug")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1052177176]
 zoom = Vector2(4, 4)
+
+[node name="CanvasLayer" parent="." unique_id=1704624854 instance=ExtResource("1_4dpyx")]

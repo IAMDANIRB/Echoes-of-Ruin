@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cmmpofb1qbdka"]
+
+[ext_resource type="Shader" uid="uid://ctov507l00c3r" path="res://Sprites/crt_effect.gdshader" id="1_fw52h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("1_fw52h")
+shader_parameter/resolution = Vector2(1152, 648)
+shader_parameter/scan_line_amount = 0.10000000475
+shader_parameter/warp_amount = 0.30000001425
+shader_parameter/noise_amount = 0.050000002375
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.150000007125
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.90000004275
+shader_parameter/vignette_intensity = 0.6000000285
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.3
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1704624854]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1356460431]
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
