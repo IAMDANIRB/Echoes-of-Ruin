@@ -29,7 +29,7 @@ position = Vector2(4.7683716e-07, -9)
 rotation = -0.7853982
 texture = ExtResource("3_fkybt")
 region_enabled = true
-region_rect = Rect2(110, 0, 10, 10)
+region_rect = Rect2(10, 0, 10, 10)
 
 [node name="Muzzle" type="Node2D" parent="Weapon" unique_id=395837436]
 position = Vector2(0, -5)
