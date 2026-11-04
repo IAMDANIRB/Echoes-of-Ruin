@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jpjl8hy6i0al" path="res://Scenes/player.tscn" id="1_tlcug"]
 
 [node name="Main" type="Node2D" unique_id=1710429754]
-position = Vector2(146, 82)
+position = Vector2(145, -84)
 
 [node name="Room_Template" parent="." unique_id=296701150 instance=ExtResource("1_3mqfk")]
 
