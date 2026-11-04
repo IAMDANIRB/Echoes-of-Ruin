@@ -37,6 +37,7 @@ rotation = -1.573819
 polygon = PackedVector2Array(-56, -56, -8, -56, -8, -81, -80, -81, -81, -8, -56, -8)
 
 [node name="Entrance_North" type="Node2D" parent="." unique_id=2037081548]
+script = ExtResource("3_h1l6b")
 
 [node name="Door" type="Node2D" parent="Entrance_North" unique_id=136030188]
 
@@ -81,13 +82,14 @@ position = Vector2(0, -60)
 position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAD//wAAAAAGAAUAAAAAAAAAAAAGAAUAAAA=")
 tile_set = ExtResource("1_11dti")
-script = ExtResource("3_h1l6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance_North/Barrier" unique_id=161218595]
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Entrance_South" type="Node2D" parent="." unique_id=1927712903]
 rotation = 3.1419847
+script = ExtResource("3_h1l6b")
+direction = 1
 
 [node name="Door" type="Node2D" parent="Entrance_South" unique_id=506947003]
 
@@ -134,13 +136,14 @@ position = Vector2(0, -60)
 position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAD//wAAAAAGAAUAAAAAAAAAAAAGAAUAAAA=")
 tile_set = ExtResource("1_11dti")
-script = ExtResource("3_h1l6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance_South/Barrier" unique_id=1356348430]
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Entrance_West" type="Node2D" parent="." unique_id=1693414033]
 rotation = -1.5704691
+script = ExtResource("3_h1l6b")
+direction = 3
 
 [node name="Door" type="Node2D" parent="Entrance_West" unique_id=683777963]
 
@@ -187,13 +190,14 @@ position = Vector2(0, -60)
 position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAD//wAAAAAGAAUAAAAAAAAAAAAGAAUAAAA=")
 tile_set = ExtResource("1_11dti")
-script = ExtResource("3_h1l6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance_West/Barrier" unique_id=1565739362]
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Entrance_East" type="Node2D" parent="." unique_id=872504120]
 rotation = 1.5692893
+script = ExtResource("3_h1l6b")
+direction = 2
 
 [node name="Door" type="Node2D" parent="Entrance_East" unique_id=2051186777]
 
@@ -240,7 +244,6 @@ position = Vector2(0, -60)
 position = Vector2(0, -4)
 tile_map_data = PackedByteArray("AAD//wAAAAAGAAUAAAAAAAAAAAAGAAUAAAA=")
 tile_set = ExtResource("1_11dti")
-script = ExtResource("3_h1l6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance_East/Barrier" unique_id=1173745434]
 shape = SubResource("RectangleShape2D_yf5fn")
