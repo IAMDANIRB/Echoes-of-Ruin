@@ -99,7 +99,7 @@ func get_room_from_map(x: int, y: int) -> Room:
 	for room in rooms:
 		var pos = _get_map_index(room)
 		
-		if pos.x != x and pos.y != y:
+		if pos.x != x or pos.y != y:
 			continue
 		
 		return room

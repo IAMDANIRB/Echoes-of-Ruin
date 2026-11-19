@@ -1,21 +1,24 @@
 [gd_scene format=3 uid="uid://bnnces1glcwxh"]
 
 [ext_resource type="Script" uid="uid://b5i5faiopyun1" path="res://Scripts/projectile.gd" id="1_aihi3"]
-[ext_resource type="Texture2D" uid="uid://thpg8j6n5pmb" path="res://Sprites/Weapons.png" id="2_c3q3r"]
+[ext_resource type="Texture2D" uid="uid://dg2sxln1witpj" path="res://Sprites/04.png" id="2_aihi3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 1.4142151
+radius = 1.0
 
 [node name="Projectile" type="Area2D" unique_id=1479699266]
 rotation = -0.7853982
 script = ExtResource("1_aihi3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747476639]
-modulate = Color(0.081726715, 0.2647818, 0.2647818, 1)
+modulate = Color(0.018356744, 0.10583333, 0.10583333, 1)
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
-texture = ExtResource("2_c3q3r")
+position = Vector2(2.3841858e-07, 5.9604645e-08)
+rotation = 0.78365284
+scale = Vector2(0.20165852, 0.22057733)
+texture = ExtResource("2_aihi3")
 region_enabled = true
-region_rect = Rect2(125, 31, 4, 4)
+region_rect = Rect2(0, 31, 15, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868713927]
 shape = SubResource("CircleShape2D_g4v7s")

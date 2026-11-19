@@ -8,7 +8,7 @@
 radius = 3.0
 height = 10.0
 
-[node name="Player" type="CharacterBody2D" unique_id=476513904]
+[node name="Player" type="CharacterBody2D" unique_id=476513904 groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_6t5aa")
 
@@ -26,11 +26,11 @@ modulate = Color(0.57284313, 3.1140196, 2.6120589, 1)
 
 [node name="WeaponSprite" type="Sprite2D" parent="Weapon" unique_id=440908599]
 modulate = Color(0.7767227, 0.5007226, 0.8893017, 1)
-position = Vector2(4.7683716e-07, -9)
+position = Vector2(2.3841858e-07, -7)
 rotation = -0.7853982
 texture = ExtResource("3_fkybt")
 region_enabled = true
 region_rect = Rect2(10, 0, 10, 10)
 
 [node name="Muzzle" type="Node2D" parent="Weapon" unique_id=395837436]
-position = Vector2(0, -5)
+position = Vector2(0, -12)

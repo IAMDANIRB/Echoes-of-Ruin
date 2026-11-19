@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bnnces1glcwxh" path="res://Scenes/Projectiles/projectile.tscn" id="4_iixi8"]
 
 [node name="Main" type="Node2D" unique_id=1710429754]
-position = Vector2(145, -84)
 
 [node name="RoomGeneration" type="Node" parent="." unique_id=328722154 node_paths=PackedStringArray("player")]
 script = ExtResource("1_3mqfk")

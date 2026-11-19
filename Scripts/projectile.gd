@@ -16,4 +16,4 @@ func _on_body_entered(body):
 	queue_free()
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	pass 
