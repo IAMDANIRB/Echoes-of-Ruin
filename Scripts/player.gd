@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 @export var move_speed : float = 50
 
+@export var shoot_rate : float = 0.4
+var last_shoot_time : float
+var projectile_scene : PackedScene = preload("res://Scenes/Projectiles/projectile.tscn")
+
 @onready var sprite : Sprite2D = $Sprite
 @onready var weapon_origin : Node2D = $Weapon
 @onready var muzzle : Node2D = $Weapon/Muzzle
@@ -17,3 +21,19 @@ func _process(delta):
 	weapon_origin.rotation_degrees = rad_to_deg(mouse_dir.angle()) + 90
 	
 	sprite.flip_h = mouse_dir.x < 0
+	
+	if Input.is_action_pressed("attack"):
+		if Time.get_unix_time_from_system() - last_shoot_time > shoot_rate:
+			_shoot()
+
+func _shoot():
+	last_shoot_time = Time.get_unix_time_from_system()
+	
+	var proj = projectile_scene.instantiate()
+	get_tree().root.add_child(proj)
+	proj.global_position = muzzle.global_position
+	proj.rotation = weapon_origin.rotation
+	proj.owner_character = self
+
+func take_damage (amount : int):
+	pass

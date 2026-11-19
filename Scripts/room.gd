@@ -43,8 +43,12 @@ func player_enter (entry_direction : Direction, player : CharacterBody2D, first_
 		player.global_position = entrance_east.player_spawn.global_position
 	elif entry_direction == Direction.WEST:
 		player.global_position = entrance_west.player_spawn.global_position
+	
 	if first_room:
 		player.global_position = global_position
+	
+	GlobalSignals.OnPlayerEnterRoom.emit(self)
+	
 	if enemies_in_room > 0 and not doors_always_open:
 		close_doors()
 	else:

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bvijrdpugdhd7" path="res://Scripts/room_generation.gd" id="1_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://cmmpofb1qbdka" path="res://Scenes/crt_effect.tscn" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://jpjl8hy6i0al" path="res://Scenes/player.tscn" id="1_tlcug"]
+[ext_resource type="Script" uid="uid://dy4lxa3koykuw" path="res://Scripts/camera_controller.gd" id="3_cyadu"]
+[ext_resource type="PackedScene" uid="uid://bnnces1glcwxh" path="res://Scenes/Projectiles/projectile.tscn" id="4_iixi8"]
 
 [node name="Main" type="Node2D" unique_id=1710429754]
 position = Vector2(145, -84)
@@ -14,6 +16,9 @@ player = NodePath("../Player")
 [node name="Player" parent="." unique_id=476513904 instance=ExtResource("1_tlcug")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1052177176]
-position = Vector2(433, 411)
+zoom = Vector2(4, 4)
+script = ExtResource("3_cyadu")
 
 [node name="CanvasLayer" parent="." unique_id=1704624854 instance=ExtResource("1_4dpyx")]
+
+[node name="Projectile" parent="." unique_id=1479699266 instance=ExtResource("4_iixi8")]
