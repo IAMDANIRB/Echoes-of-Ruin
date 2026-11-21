@@ -3,13 +3,19 @@
 [ext_resource type="Script" uid="uid://bvijrdpugdhd7" path="res://Scripts/room_generation.gd" id="1_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://cmmpofb1qbdka" path="res://Scenes/crt_effect.tscn" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://jpjl8hy6i0al" path="res://Scenes/player.tscn" id="1_tlcug"]
+[ext_resource type="PackedScene" uid="uid://cgnj1q752bwv0" path="res://Scenes/Rooms/room_template.tscn" id="2_jv26f"]
 [ext_resource type="Script" uid="uid://dy4lxa3koykuw" path="res://Scripts/camera_controller.gd" id="3_cyadu"]
+[ext_resource type="PackedScene" uid="uid://btox7171y83ib" path="res://Scenes/Rooms/room_enemy1.tscn" id="3_rb0md"]
 [ext_resource type="PackedScene" uid="uid://bnnces1glcwxh" path="res://Scenes/Projectiles/projectile.tscn" id="4_iixi8"]
+[ext_resource type="PackedScene" uid="uid://ck4qetvj6mbh6" path="res://Scenes/Rooms/room_enemy2.tscn" id="4_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://bw34jnivp40k6" path="res://Scenes/Rooms/room_enemy3.tscn" id="5_rb0md"]
 
 [node name="Main" type="Node2D" unique_id=1710429754]
 
 [node name="RoomGeneration" type="Node" parent="." unique_id=328722154 node_paths=PackedStringArray("player")]
 script = ExtResource("1_3mqfk")
+first_room_scene = ExtResource("2_jv26f")
+room_scenes = Array[PackedScene]([ExtResource("3_rb0md"), ExtResource("4_u5ghp"), ExtResource("5_rb0md")])
 player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=476513904 instance=ExtResource("1_tlcug")]
