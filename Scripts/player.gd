@@ -36,4 +36,4 @@ func _shoot():
 	proj.owner_character = self
 
 func take_damage (amount : int):
-	pass
+	print("Take Damage")

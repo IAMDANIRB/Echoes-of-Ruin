@@ -8,6 +8,8 @@ radius = 1.0
 
 [node name="Projectile" type="Area2D" unique_id=1479699266]
 rotation = -0.7853982
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_aihi3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747476639]
