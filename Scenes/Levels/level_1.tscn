@@ -9,13 +9,21 @@
 [ext_resource type="PackedScene" uid="uid://bnnces1glcwxh" path="res://Scenes/Projectiles/projectile.tscn" id="4_iixi8"]
 [ext_resource type="PackedScene" uid="uid://ck4qetvj6mbh6" path="res://Scenes/Rooms/room_enemy2.tscn" id="4_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://bw34jnivp40k6" path="res://Scenes/Rooms/room_enemy3.tscn" id="5_rb0md"]
+[ext_resource type="PackedScene" uid="uid://bxbqvgg5ajaqq" path="res://Scenes/Rooms/room_item.tscn" id="6_u5ghp"]
+[ext_resource type="Script" uid="uid://cdhpypog2v0vg" path="res://Scripts/minimap.gd" id="11_afv7b"]
+[ext_resource type="Texture2D" uid="uid://bu5iiwgowsr50" path="res://Sprites/Items/minimap_room.tres" id="11_hwvp3"]
+[ext_resource type="Script" uid="uid://catkba3odanvy" path="res://Scripts/player_health_ui.gd" id="11_k2mw1"]
+[ext_resource type="Texture2D" uid="uid://cbm17r6wgxe0" path="res://Sprites/Items/heart_full.tres" id="12_tjl6l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 
 [node name="Main" type="Node2D" unique_id=1710429754]
 
 [node name="RoomGeneration" type="Node" parent="." unique_id=328722154 node_paths=PackedStringArray("player")]
 script = ExtResource("1_3mqfk")
 first_room_scene = ExtResource("2_jv26f")
-room_scenes = Array[PackedScene]([ExtResource("3_rb0md"), ExtResource("4_u5ghp"), ExtResource("5_rb0md")])
+room_scenes = Array[PackedScene]([ExtResource("3_rb0md"), ExtResource("4_u5ghp"), ExtResource("5_rb0md"), ExtResource("6_u5ghp")])
 player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=476513904 instance=ExtResource("1_tlcug")]
@@ -24,6 +32,359 @@ player = NodePath("../Player")
 zoom = Vector2(4, 4)
 script = ExtResource("3_cyadu")
 
-[node name="CanvasLayer" parent="." unique_id=1704624854 instance=ExtResource("1_4dpyx")]
+[node name="Crt" parent="." unique_id=1704624854 instance=ExtResource("1_4dpyx")]
 
 [node name="Projectile" parent="." unique_id=1479699266 instance=ExtResource("4_iixi8")]
+position = Vector2(0, -7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1342725162]
+
+[node name="BorderLeft" type="Panel" parent="CanvasLayer" unique_id=1131341127]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 220.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="PlayerHealth" type="GridContainer" parent="CanvasLayer/BorderLeft" unique_id=1969978523]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 30.0
+offset_right = 181.0
+offset_bottom = 134.0
+columns = 4
+script = ExtResource("11_k2mw1")
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=294884864]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=87085379]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=2145507304]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart4" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=418832346]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart5" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=751547291]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart6" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=382128889]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart7" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=709008834]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart8" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=400597599]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart9" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=655341242]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart10" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=208466976]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart11" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=1568120829]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="Heart12" type="TextureRect" parent="CanvasLayer/BorderLeft/PlayerHealth" unique_id=697229399]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_tjl6l")
+
+[node name="BorderRight" type="Panel" parent="CanvasLayer" unique_id=2058994783]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="Minimap" type="GridContainer" parent="CanvasLayer/BorderRight" unique_id=449196770]
+modulate = Color(1.5732484, 0.7766801, 1.803834, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_top = -189.0
+offset_right = -27.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 7
+script = ExtResource("11_afv7b")
+
+[node name="RoomIcon" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1667352603]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon2" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=797901015]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon3" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=668287431]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon4" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=921229397]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon5" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=251869263]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon6" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1464893199]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon7" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=937183981]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon8" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=519222914]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon9" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1548848256]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon10" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=625031421]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon11" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1452735541]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon12" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=384088277]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon13" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=975401199]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon14" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=848503957]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon15" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=478270715]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon16" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1453392411]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon17" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1120257327]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon18" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=516570881]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon19" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=2147072816]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon20" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1656152934]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon21" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1411126]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon22" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=927636898]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon23" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1903437834]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon24" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=226643707]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon25" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1265594814]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon26" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=2122318958]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon27" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1468221206]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon28" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=955985571]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon29" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=40306964]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon30" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=499895906]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon31" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1588441345]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon32" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1679651428]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon33" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=753493454]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon34" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=305304818]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon35" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=683072236]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon36" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1760491286]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon37" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=906211377]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon38" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=2073653667]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon39" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=289466623]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon40" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1151724434]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon41" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1610292003]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon42" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=288915785]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon43" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=635296693]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon44" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1657728981]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon45" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1563408474]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon46" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=2108281743]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon47" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=988571028]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon48" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1452020855]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")
+
+[node name="RoomIcon49" type="TextureRect" parent="CanvasLayer/BorderRight/Minimap" unique_id=1425815846]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_hwvp3")

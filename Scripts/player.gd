@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
+@export var cur_hp : int = 8
+@export var max_hp : int = 8
+
 @export var move_speed : float = 50
+
 
 @export var shoot_rate : float = 0.4
 var last_shoot_time : float
@@ -9,6 +13,9 @@ var projectile_scene : PackedScene = preload("res://Scenes/Projectiles/projectil
 @onready var sprite : Sprite2D = $Sprite
 @onready var weapon_origin : Node2D = $Weapon
 @onready var muzzle : Node2D = $Weapon/Muzzle
+
+func _ready():
+	GlobalSignals.OnPlayerUpdateHealth.emit.call_deferred(cur_hp, max_hp)
 
 func _physics_process(delta):
 	var move_input : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -36,4 +43,19 @@ func _shoot():
 	proj.owner_character = self
 
 func take_damage (amount : int):
-	print("Take Damage")
+	cur_hp -= amount
+	
+	GlobalSignals.OnPlayerUpdateHealth.emit(cur_hp, max_hp)
+	
+	if cur_hp <= 0:
+		die() 
+	
+func die ():
+	pass
+
+func heal(amount: int):
+	cur_hp += amount
+	if cur_hp > max_hp:
+		cur_hp = max_hp
+	
+	GlobalSignals.OnPlayerUpdateHealth.emit(cur_hp, max_hp)
