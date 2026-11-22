@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var max_hp : int = 8
 
 @export var move_speed : float = 50
-
+var is_dead : bool = false
 
 @export var shoot_rate : float = 0.4
 var last_shoot_time : float
@@ -37,7 +37,7 @@ func _shoot():
 	last_shoot_time = Time.get_unix_time_from_system()
 	
 	var proj = projectile_scene.instantiate()
-	get_tree().root.add_child(proj)
+	get_tree().current_scene.add_child(proj)
 	proj.global_position = muzzle.global_position
 	proj.rotation = weapon_origin.rotation
 	proj.owner_character = self
@@ -45,23 +45,23 @@ func _shoot():
 	$ShootSound.play()
 
 func take_damage (amount : int):
+	if is_dead:
+		return
 	cur_hp -= amount
-	
 	_damage_flash()
 	GlobalSignals.OnPlayerUpdateHealth.emit(cur_hp, max_hp)
 	$DamageSound.play()
-	
 	if cur_hp <= 0:
-		die() 
+		die()
+	
 
 func _damage_flash():
 	visible = false
 	await get_tree().create_timer(0.07).timeout
 	visible = true
 
-
-
 func die ():
+	is_dead = true
 	get_tree().change_scene_to_file.call_deferred("res://Scenes/menu.tscn")
 
 func heal(amount: int):
