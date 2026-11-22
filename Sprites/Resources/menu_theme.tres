@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://dc7butk0fnxnf"]
+
+[ext_resource type="StyleBox" uid="uid://bkvbc43ffa3fd" path="res://Sprites/Resources/panel_container_flat_box.tres" id="1_ygfqn"]
+[ext_resource type="FontFile" uid="uid://b135rj6rn85ke" path="res://Sprites/Resources/Poppins-Black.ttf" id="2_injcf"]
+
+[resource]
+default_font = ExtResource("2_injcf")
+default_font_size = 32
+Button/font_sizes/font_size = 32
+Button/styles/disabled = ExtResource("1_ygfqn")
+Button/styles/focus = ExtResource("1_ygfqn")
+Button/styles/hover = ExtResource("1_ygfqn")
+Button/styles/normal = ExtResource("1_ygfqn")
+Button/styles/pressed = ExtResource("1_ygfqn")
+PanelContainer/styles/panel = ExtResource("1_ygfqn")
+RichTextLabelTitle/base_type = &"RichTextLabel"
+RichTextLabelTitle/font_sizes/normal_font_size = 128
+VBoxContainer/constants/separation = 16

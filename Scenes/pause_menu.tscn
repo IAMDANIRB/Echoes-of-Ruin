@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dg36p5nji1n07"]
+
+[ext_resource type="Script" uid="uid://d3n2j8ikovkht" path="res://Scripts/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="FontFile" uid="uid://b135rj6rn85ke" path="res://Sprites/Resources/Poppins-Black.ttf" id="2_6pfc5"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=721212090]
+process_mode = 3
+script = ExtResource("1_emv3i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1864812922]
+modulate = Color(0, 0, 0, 0.60784316)
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="." unique_id=1673170222]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -45.5
+offset_right = 145.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 60
+text = "Reanudar"
+
+[node name="Button2" type="Button" parent="." unique_id=348760364]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = 76.0
+offset_right = 210.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6pfc5")
+theme_override_font_sizes/font_size = 60
+text = "Salir al menú"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

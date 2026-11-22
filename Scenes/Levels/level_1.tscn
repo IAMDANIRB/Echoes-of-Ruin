@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bu5iiwgowsr50" path="res://Sprites/Items/minimap_room.tres" id="11_hwvp3"]
 [ext_resource type="Script" uid="uid://catkba3odanvy" path="res://Scripts/player_health_ui.gd" id="11_k2mw1"]
 [ext_resource type="Texture2D" uid="uid://cbm17r6wgxe0" path="res://Sprites/Items/heart_full.tres" id="12_tjl6l"]
+[ext_resource type="AudioStream" uid="uid://bhkreyl73wp0l" path="res://Audio/Music.mp3" id="15_tjl6l"]
+[ext_resource type="PackedScene" uid="uid://dg36p5nji1n07" path="res://Scenes/pause_menu.tscn" id="16_3628d"]
+[ext_resource type="Script" uid="uid://ltq1f4bk86pw" path="res://Scripts/victory_checker.gd" id="17_irw6p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
@@ -388,3 +391,13 @@ texture = ExtResource("11_hwvp3")
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("11_hwvp3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1863940945]
+stream = ExtResource("15_tjl6l")
+volume_db = -20.0
+autoplay = true
+
+[node name="PauseMenu" parent="." unique_id=721212090 instance=ExtResource("16_3628d")]
+
+[node name="Node" type="Node" parent="." unique_id=1424511559]
+script = ExtResource("17_irw6p")

@@ -20,6 +20,7 @@ var player_direction : Vector2
 var player_distance : float
 
 func _ready ():
+	add_to_group("Enemies")
 	player = get_tree().get_first_node_in_group("Player")
 	GlobalSignals.OnPlayerEnterRoom.connect(_on_player_enter_room)
 
@@ -56,8 +57,17 @@ func _try_attack():
 func take_damage (amount : int):
 	cur_hp -= amount
 	
+	_damage_flash()
+	$DamageSound.play()
+	
 	if cur_hp <= 0:
 		die()
+
+func _damage_flash():
+	visible = false
+	await get_tree().create_timer(0.07).timeout
+	visible = true
+
 
 func die ():
 	GlobalSignals.OnDefeatEnemy.emit(self)

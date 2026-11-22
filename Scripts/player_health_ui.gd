@@ -14,7 +14,6 @@ func _ready ():
 			heart_icons.append(child)
 
 func _update_ui (cur_hp : int, max_hp : int):
-	print("vida: ", cur_hp, " / ", max_hp)
 	for i in len(heart_icons):
 		if i >= max_hp:
 			heart_icons[i].visible = false

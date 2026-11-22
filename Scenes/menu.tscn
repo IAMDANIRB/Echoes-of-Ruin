@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dfehx84au2u6v"]
+
+[ext_resource type="Theme" uid="uid://dc7butk0fnxnf" path="res://Sprites/Resources/menu_theme.tres" id="1_j7r1e"]
+[ext_resource type="PackedScene" uid="uid://cebxfq7cecmbu" path="res://Scenes/play_button.tscn" id="2_8inha"]
+[ext_resource type="Script" uid="uid://bp216ovwwhufj" path="res://Scripts/play_button.gd" id="3_n2mnh"]
+[ext_resource type="Script" uid="uid://tekhphergqtx" path="res://Scripts/quit_button.gd" id="4_x5f3s"]
+
+[node name="Menu" type="Control" unique_id=703021453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j7r1e")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1540499966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=805461901]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=821723336]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"RichTextLabelTitle"
+bbcode_enabled = true
+text = "[wave]Echoes of Ruin"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PlayButton" parent="PanelContainer/VBoxContainer" unique_id=1951261980 instance=ExtResource("2_8inha")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_n2mnh")
+
+[node name="QuitButton" parent="PanelContainer/VBoxContainer" unique_id=940558407 instance=ExtResource("2_8inha")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Salir del Juego"
+script = ExtResource("4_x5f3s")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_pressed"]

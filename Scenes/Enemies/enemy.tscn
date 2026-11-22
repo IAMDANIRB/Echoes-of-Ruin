@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuiokxqvh6k34" path="res://Scripts/enemy.gd" id="1_jcvw6"]
 [ext_resource type="Texture2D" uid="uid://dnbe83g1jjnrn" path="res://Sprites/Creatures.png" id="2_x1rqp"]
+[ext_resource type="AudioStream" uid="uid://bq0c2fn0r6px8" path="res://Audio/EnemyDamaged.wav" id="3_x1rqp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 3.0
@@ -19,3 +20,6 @@ region_rect = Rect2(60, 70, 9, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2128456421]
 shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="." unique_id=1071905655]
+stream = ExtResource("3_x1rqp")

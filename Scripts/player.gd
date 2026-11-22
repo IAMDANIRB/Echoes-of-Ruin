@@ -41,17 +41,28 @@ func _shoot():
 	proj.global_position = muzzle.global_position
 	proj.rotation = weapon_origin.rotation
 	proj.owner_character = self
+	
+	$ShootSound.play()
 
 func take_damage (amount : int):
 	cur_hp -= amount
 	
+	_damage_flash()
 	GlobalSignals.OnPlayerUpdateHealth.emit(cur_hp, max_hp)
+	$DamageSound.play()
 	
 	if cur_hp <= 0:
 		die() 
-	
+
+func _damage_flash():
+	visible = false
+	await get_tree().create_timer(0.07).timeout
+	visible = true
+
+
+
 func die ():
-	pass
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 func heal(amount: int):
 	cur_hp += amount

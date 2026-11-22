@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cebxfq7cecmbu"]
+
+[node name="PlayButton" type="Button" unique_id=1951261980]
+custom_minimum_size = Vector2(300, 100)
+offset_right = 300.0
+offset_bottom = 100.0
+text = "Jugar"
