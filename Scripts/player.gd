@@ -62,7 +62,7 @@ func _damage_flash():
 
 
 func die ():
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://Scenes/menu.tscn")
 
 func heal(amount: int):
 	cur_hp += amount
