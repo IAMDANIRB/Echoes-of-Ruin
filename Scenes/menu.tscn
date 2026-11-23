@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cebxfq7cecmbu" path="res://Scenes/play_button.tscn" id="2_8inha"]
 [ext_resource type="Script" uid="uid://bp216ovwwhufj" path="res://Scripts/play_button.gd" id="3_n2mnh"]
 [ext_resource type="Script" uid="uid://tekhphergqtx" path="res://Scripts/quit_button.gd" id="4_x5f3s"]
+[ext_resource type="AudioStream" uid="uid://d4a64j3m6u7jx" path="res://Audio/16 - The Calm Before The Storm.wav" id="5_wwsa2"]
 
 [node name="Menu" type="Control" unique_id=703021453]
 layout_mode = 3
@@ -51,6 +52,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Salir del Juego"
 script = ExtResource("4_x5f3s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=27523534]
+stream = ExtResource("5_wwsa2")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_pressed"]
